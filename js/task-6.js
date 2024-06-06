@@ -13,22 +13,30 @@ function onCreateButtonClick() {
     return;
   }
 
-  createBoxes(amount);
+  const boxes = createBoxes(amount);
+  appendBoxesToContainer(boxes);
   input.value = "";
 }
 
 function createBoxes(amount) {
-  clearBoxes();
-
+  const boxes = [];
   let size = 30;
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
     box.style.width = size + "px";
     box.style.height = size + "px";
     box.style.backgroundColor = getRandomHexColor();
-    boxesContainer.appendChild(box);
+    boxes.push(box);
     size += 10;
   }
+  return boxes;
+}
+
+function appendBoxesToContainer(boxes) {
+  clearBoxes();
+  boxes.forEach((box) => {
+    boxesContainer.appendChild(box);
+  });
 }
 
 function onDestroyButtonClick() {
