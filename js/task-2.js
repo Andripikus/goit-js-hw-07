@@ -31,4 +31,5 @@ const images = [
         <img src="${image.url}" alt="${image.alt}">
       </li>`).join('');
     
-    gallery.insertAdjacentHTML('beforeend', galleryItems);
+gallery.insertAdjacentHTML('beforeend', galleryItems);
+    

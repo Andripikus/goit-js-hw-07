@@ -1,10 +1,7 @@
-document.getElementById("name-input").addEventListener("input", function() {
+document.querySelector("#name-input").addEventListener("input", function () {
+  const name = this.value.trim();
+  const output = document.querySelector("#name-output");
 
-    const name = this.value.trim();
-
-    if (name !== "") {
-        document.getElementById("name-output").textContent = name;
-    } else {
-        document.getElementById("name-output").textContent = "Anonymous";
-    }
+  output.textContent = name !== "" ? name : "Anonymous";
 });
+
